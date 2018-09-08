@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*var start = new Date;
+    setInterval(function(){
+        var end = new Date;
+        console.log('Time elapsed:', end - start, 'ms');
+        start = end;
+        for(var i = 0; i < 10000*10000; i++);
+    },1000)*/
+    /*var start = new Date;
+    mySetInterval(function(){
+        var end = new Date;
+        console.log('Time elapsed:', end - start, 'ms');
+        start = end;
+        for(var i = 0; i < 10000*10000; i++);
+    },1000)*/
+    let obj = {
+        a: 1,
+        b: {
+            c: 2,
+            d: 3,
+        },
+    }
+    obj.c = obj.b
+    obj.e = obj.a
+    obj.b.c = obj.c
+    obj.b.d = obj.b
+    obj.b.e = obj.b.c
+    let newObj = JSON.parse(JSON.stringify(obj))
+    console.log(newObj)
+</script>
+</body>
+</html>
